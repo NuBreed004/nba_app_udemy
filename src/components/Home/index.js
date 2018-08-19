@@ -3,7 +3,11 @@ import NewsSlider from '../widgets/NewsSlider';
 
 const Home = () => (
   <div>
-    <NewsSlider />
+    <NewsSlider
+      type="featured"
+      from = {3}
+      to= {7}
+    />
   </div>
 );
 
