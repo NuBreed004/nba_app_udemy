@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import SliderTemplates from './sliderTemplates';
+import axios from 'axios';
+import { URL } from '../../../helpers';
 
 
 class NewsSlider extends Component {
@@ -8,12 +11,18 @@ class NewsSlider extends Component {
   }
 
   componentWillMount() {
+    axios.get(`${URL}/articles?_start=4&_end=8`)
+    .then(response => {
+      this.setState({
+        news: response.data
+      })
+    })
 
   }
 
   render() {
     return (
-      <div>Slider</div>
+      <SliderTemplates data={this.state.news} />
     );
   }
 
