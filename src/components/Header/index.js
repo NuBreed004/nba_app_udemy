@@ -7,8 +7,8 @@ import SideNav from '../SideNav';
 const Header = (props) => {
 
   const logo = () => (
-      <Link to="/">
-        <img className={style.logo} src="/images/nba_logo.png" alt="nba logo"/>
+      <Link to="/" className={style.logo}>
+        <img src="/images/nba_logo.png" alt="nba logo"/>
       </Link>
     )
 
