@@ -3,22 +3,23 @@ import Slick from 'react-slick';
 import style from './slider.css';
 import { Link } from 'react-router-dom';
 
-const SliderTemplates = ({ data, type }) => {
+const SliderTemplates = (props) => {
 
 let template = null
 
 const settings = {
-  dots: false,
+  dots: true,
   infinite: true,
   arrows: false,
   speed: 500,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  ...props.settings
 }
 
-switch (type) {
+switch (props.type) {
   case ('featured'):
-    template = data.map((item, i) => {
+    template = props.data.map((item, i) => {
       return (
         <div key={i}>
           <div className={style.featured_item}>

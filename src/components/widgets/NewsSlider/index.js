@@ -25,6 +25,7 @@ class NewsSlider extends Component {
       <SliderTemplates
         data={this.state.news}
         type={this.props.type}
+        settings={this.props.settings}
       />
     );
   }
