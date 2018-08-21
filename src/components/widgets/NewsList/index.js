@@ -10,22 +10,43 @@ import { URL } from '../../../helpers';
 class NewsList extends Component {
 
   state = {
-    news: []
+    items: [],
+    start: this.props.start,
+    end: this.props.start + this.props.amount
   }
 
   componentWillMount() {
-    axios.get(`${URL}/articles`)
+    const { items, start, end } = this.state
+    axios.get(`${URL}/articles?_start=${start}&_end=${end}`)
           .then(response => {
             this.setState({
-              news: [...this.state.news, ...response.data]
+              items: [...items, ...response.data]
             })
           })
   }
 
+  renderNews = (type) => {
+    let template = null
+
+    switch (type) {
+      case 'card':
+        template = this.state.items.map(item => (
+          <div key={item.id}>
+            Hello!
+          </div>
+        ))
+        break;
+      default:
+        template = null
+    }
+    return template
+  }
+
   render() {
-    console.log(this.state.news)
     return (
-      <div>Hello!</div>
+       <div>
+         { this.renderNews( this.props.type ) }
+       </div>
     );
   }
 

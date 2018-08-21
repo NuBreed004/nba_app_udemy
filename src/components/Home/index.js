@@ -13,7 +13,12 @@ const Home = () => {
             dots: false,
           }}
         />
-        <NewsList />
+        <NewsList
+          type = "card"
+          start = {3}
+          amount = {3}
+          loadMore = { true }
+         />
       </div>
   )
 };
