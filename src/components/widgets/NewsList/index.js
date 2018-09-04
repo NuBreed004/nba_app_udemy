@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { URL } from '../../../helpers';
+import CardInfo from '../CardInfo';
 import styles from './newslist.css';
 import Button from '../Buttons';
 
@@ -62,7 +63,10 @@ class NewsList extends Component {
             <div>
               <div className={styles.newslist_item}>
                 <Link to={`/articles/${item.id}`}>
-                  team
+                  <CardInfo
+                    type='cardinfo'
+                    teams={this.state.teams}
+                   />
                   <h2>{item.title}</h2>
                 </Link>
               </div>
