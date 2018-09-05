@@ -64,7 +64,8 @@ class NewsList extends Component {
               <div className={styles.newslist_item}>
                 <Link to={`/articles/${item.id}`}>
                   <CardInfo
-                    type='cardinfo'
+                    team={item.team}
+                    date={item.date}
                     teams={this.state.teams}
                    />
                   <h2>{item.title}</h2>
