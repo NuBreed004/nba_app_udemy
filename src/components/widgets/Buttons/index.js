@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './buttons.css';
 
-const buttons = ({ type, cta, loadmore }) => {
+const Buttons = ({ type, cta, loadMore, linkTo }) => {
   let template = null
 
   switch (type) {
@@ -10,11 +10,20 @@ const buttons = ({ type, cta, loadmore }) => {
       template = (
         <div
           className={styles.blue_btn}
-          onClick={ loadmore }
+          onClick={ loadMore }
           >
           { cta }
         </div>
       )
+      break;
+      case 'linkTo':
+        template = (
+          <Link to = { linkTo }
+                className={styles.blue_btn}
+            >
+            { cta }
+          </Link>
+        )
       break;
     default:
     template = null
@@ -22,4 +31,4 @@ const buttons = ({ type, cta, loadmore }) => {
   return template
 };
 
-export default buttons;
+export default Buttons;
