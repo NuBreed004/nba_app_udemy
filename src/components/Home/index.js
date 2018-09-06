@@ -7,13 +7,18 @@ const Home = () => {
       <div>
         <NewsSlider
           type="featured"
-          from = {3}
-          to= {7}
-          settings={{
+          start = {0}
+          amount = {3}
+          settings = {{
             dots: false,
           }}
         />
-        <NewsList />
+        <NewsList
+          type="card"
+          loadMore={true}
+          start = {3}
+          amount= {3}
+        />
       </div>
   )
 };
