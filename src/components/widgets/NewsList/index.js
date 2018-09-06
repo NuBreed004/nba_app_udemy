@@ -10,6 +10,7 @@ import CardInfo from '../CardInfo';
 import styles from './newslist.css';
 import Button from '../Buttons';
 
+
 class NewsList extends Component {
 
   state = {
