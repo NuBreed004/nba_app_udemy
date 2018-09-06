@@ -6,9 +6,9 @@ import styles from './index.css';
 const VideosTemplate = ({ data, teams }) => {
   return data.map((item, i)=> {
     return <Link to={`/videos/${item.id}`} key={i}>
-              <div className={styles.videoListItem_wrapper}>
-                <div className={styles.left}
-                    style={{
+      <div className={styles.videoListItem_wrapper}>
+        <div className={styles.left}
+          style={{
                       background: `url(/images/videos/${item.image})`
                     }}
                   >
