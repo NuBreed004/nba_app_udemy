@@ -11,7 +11,7 @@ class NewsSlider extends Component {
   }
 
   componentWillMount() {
-    axios.get(`${URL}/articles?_start=${this.props.from}&_end=${this.props.to}`)
+    axios.get(`${URL}/articles?_start=${this.props.start}&_end=${this.props.amount}`)
     .then(response => {
       this.setState({
         news: response.data
