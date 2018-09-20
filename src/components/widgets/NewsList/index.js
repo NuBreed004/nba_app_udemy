@@ -77,6 +77,43 @@ class NewsList extends Component {
           </CSSTransition>
         ))
         break;
+        case 'newsCard':
+              template = items.map((item, i) => (
+                <CSSTransition
+                  classNames={{
+                      enter: styles.newslist_wrapper,
+                      enterActive: styles.newslist_wrapper_enter
+                  }}
+                  timeout={500}
+                  key={i}
+                >
+                  <div>
+                    <div className={styles.newslist_item}>
+                      <Link to={`/articles/${item.id}`}>
+                        <div className={styles.videoListItem_wrapper}>
+                          <div className={styles.left}
+                            style={{
+                                background: `url(/images/articles/${item.image})`
+                            }}
+                          >
+                            <div></div>
+                          </div>
+                          <div className={styles.right}>
+                            <CardInfo
+                              team={item.team}
+                              date={item.date}
+                              teams={this.state.teams}
+                            />
+                            <h2>{item.title}</h2>
+                          </div>
+                        </div>
+
+                      </Link>
+                    </div>
+                  </div>
+                </CSSTransition>
+              ))
+              break;
       default:
         template = null
     }
